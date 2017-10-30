@@ -1,10 +1,9 @@
-const express = require("express");
-const webpack = require("webpack");
-const path = require("path");
-const open = require("open");
-const dotenv = require("dotenv");
-const config = require("./webpack.config");
-
+import express from 'express';
+import webpack from 'webpack';
+import path from 'path';
+import open from 'open';
+import dotenv from 'dotenv';
+import config from './webpack.config';
 /* eslint-disable no-console */
 
 dotenv.config();
@@ -25,7 +24,5 @@ app.get("*", function(req, res) {
 });
 
 app.listen(port, err =>{
-  if (!err) open(`http://localhost:${port}`);  else {
-    console.log(err);
-  }
+    (!err) ? open(`http://localhost:${port}`) : console.log(err);
 });

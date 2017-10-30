@@ -2,11 +2,10 @@
   "name": "todoapp",
   "version": "1.0.0",
   "description": "A to do application",
-  "main": "index.js",
+  "main": "client/index.js",
   "scripts": {
     "prestart": "babel server.js --out-file server-transpiled.js",
-    "start": "node server-transpiled.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server-transpiled.js"
   },
   "repository": {
     "type": "git",
