@@ -4,9 +4,7 @@ import './assets/style.css';
 import App from './component/App';
 
 ReactDOM.render(
-  <div>
-    <App />
-  </div>,
+    <App />,
   document.getElementById('app')
 );
 
