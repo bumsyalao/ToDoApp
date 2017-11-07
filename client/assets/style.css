@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #19647E;
+  font-family: 'Nunito';
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 60%;
+}
+
+.output {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50%;
+  width: 90%;
+  border-radius: 20px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20%;
+  width: 60%;
+  border-radius: 20px;
+}
+
+.create-todo {
+  padding: 1%;
+  width: 80%;
+  height: 30%;
+  border: 2px solid #38372D;
+  background-color: #FCE2D3;
+  border-radius: 15px;
+  outline: 0;
+  font-size:20px;
+  margin-bottom: 2%;
+}
+
+.submit-button {
+  width: 30%;
+  height: 20%;
+  background-color: #F4B907;
+  outline: 0;  
+}
+
+.todo-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  border: 2px solid #38372D;
+  border-radius: 3%;
+  background-color: #FCE2D3;
+  
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  border: 2px solid #FCE2D3;
+  height: 40%;
+}
+
+.buttons {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.my-list {
+  color: #38372D;
+}
+
+.my-items {
+  width: 95%;
+  height: 100%;
+}
+
+.next {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 10%;
+}
+
+.item-color {
+  margin-top: 5%;
+  color: #D5DCDA;
+}
