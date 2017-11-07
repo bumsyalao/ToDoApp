@@ -6,17 +6,20 @@ import ToDoList from './ToDoList';
 import ToDoItem from './ToDoItem';
 
 class App extends Component {
-
   render() {
     return (
       <div className="container">
         <Header />
-        <InputBox />
-        <Button />
-        <ToDoList />
-        <ToDoItem />
+        <div className="input">
+          <InputBox />
+          <Button />
+        </div>
+        <div className="output">
+          <ToDoList />
+          <ToDoItem />
+        </div>
       </div>
     );
   }
 }
- export default App;
+export default App;

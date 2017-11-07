@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-class InputBox extends Component{
+class InputBox extends Component {
   render() {
-    return(
-      <div>
+    return (
         <input type="input" className="create-todo" />
-      </div>
     );
   }
 }
