@@ -6,29 +6,53 @@ import Button from './Button';
 import CreateTodo from './createTodo';
 import ToDoList from './ToDoList';
 import ToDoItem from './ToDoItem';
-import { getTodos } from '../actions/todos';
+import { getTodos, newTodo } from '../actions/todos';
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      todos: []
-    }
+      todos: [],
+      name: ''
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
-  componentWillMount() {
-    console.log(this.props)
-    this.props.getTodos();
-    console.log(this.props.todos);
-  };
+  componentDidMount() {
+    this.props.getTodos()
+      .then(() => {
+        this.setState({
+          todos: this.props.todos
+        });
+      });
+  }
+
+  onChange(event) {
+    event.preventDefault();
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  onSubmit() {
+    this.props.newTodo(this.state.name)
+      .then(() => {
+        this.setState({
+          todos: this.props.todos
+        })
+      });
+  }
 
   render() {
     return (
       <div className="container">
         <Header />
-        <CreateTodo />
+        <CreateTodo
+          value={this.state.name}
+          onChange={this.onChange}
+          onSubmit={this.onSubmit}
+        />
         <div className="output">
-          <ToDoList todos={this.props.todos} />
+          <ToDoList todos={this.state.todos} />
           <ToDoItem />
         </div>
       </div>
@@ -36,17 +60,17 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    getTodos: () => dispatch(getTodos())
+    getTodos: () => dispatch(getTodos()),
+    newTodo: name => dispatch(newTodo(name))
   };
-}
+};
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     todos: state.todos
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-

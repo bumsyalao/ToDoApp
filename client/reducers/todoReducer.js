@@ -12,8 +12,7 @@ const todoReducer = (state = initialState.todos, action) => {
     case CREATE_TODO:
       return [
         ...state,
-        // isSuccess = true,
-        ...action.newTodo
+        action.newTodo
       ];
 
     default:
