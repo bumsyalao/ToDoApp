@@ -94,6 +94,7 @@
 .my-items {
   width: 95%;
   height: 100%;
+  overflow: scroll;
 }
 
 .next {
